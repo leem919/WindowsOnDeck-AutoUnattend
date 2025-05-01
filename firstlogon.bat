@@ -26,13 +26,13 @@ tar -xf wifi.zip
 del wifi.zip
 cd SteamDeck-Windows-WiFi-Fix-main
 del Setup.bat
-curl -o Setup.bat https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/Setup-wifi.bat
+curl -L -o Setup.bat https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/Setup-wifi.bat
 cd ..
 
 mkdir amd
 cd amd
 curl -o 7zr.exe https://www.7-zip.org/a/7zr.exe
-curl -L -o amd.7z https://sourceforge.net/projects/radeon-id-distribution/files/Release%20Polaris-Vega-Navi/Release%20AMD%20SoC/WHQL-AMD-Software-Hybrid-Edition-23.11.1-PVN-AMDSoC-Nebula-Native-DCH.7z/download
+curl -L -o amd.7z https://sourceforge.net/projects/radeon-id-distribution/files/Release%%20Polaris-Vega-Navi/Release%%20AMD%%20SoC/WHQL-AMD-Software-Hybrid-Edition-23.11.1-PVN-AMDSoC-Nebula-Native-DCH.7z/download
 7zr x amd.7z
 del amd.zip
 cd Bin64
