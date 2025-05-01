@@ -1,3 +1,7 @@
+cd ../..
+mkdir leem919_WoD
+cd leem919_WoD
+
 reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_DWORD /f
 powercfg -setdcvalueindex SCHEME_CURRENT SUB_BATTERY BATACTIONCRIT 0
 
@@ -22,30 +26,31 @@ tar -xf wifi.zip
 del wifi.zip
 cd SteamDeck-Windows-WiFi-Fix-main
 del Setup.bat
-curl -o Setup.bat https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/Setup-wifi.bat
+curl -o Setup.bat https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/Setup-wifi.bat
 cd ..
 
 mkdir amd
 cd amd
-curl -L -o amd.zip https://github.com/leem919/WindowsOnDeck-AutoUnattend/releases/download/master/WHQL-AMD-Software-Hybrid-Edition-23.11.1-PVN-AMDSoC-Nebula-Native-DCH.zip
-tar -xf amd.zip
+curl -o 7zr.exe https://www.7-zip.org/a/7zr.exe
+curl -L -o amd.7z https://sourceforge.net/projects/radeon-id-distribution/files/Release%20Polaris-Vega-Navi/Release%20AMD%20SoC/WHQL-AMD-Software-Hybrid-Edition-23.11.1-PVN-AMDSoC-Nebula-Native-DCH.7z/download
+7zr x amd.7z
 del amd.zip
 cd Bin64
 del ATIBINSetup.cmd ATICMDPX.cmd ATICMDQC.cmd ATICMDRSB.cmd ATICMDRSProf.cmd ATICMDULPS.cmd ATIVaxyPanel.cmd SetupBIN.cmd /q
-curl -o ATIBINSetup.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/amdchanges/ATIBINSetup.cmd
-curl -o ATICMDPX.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/amdchanges/ATICMDPX.cmd
-curl -o ATICMDQC.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/amdchanges/ATICMDQC.cmd
-curl -o ATICMDRSB.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/amdchanges/ATICMDRSB.cmd
-curl -o ATICMDRSProf.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/amdchanges/ATICMDRSProf.cmd
-curl -o ATICMDULPS.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/amdchanges/ATICMDULPS.cmd
-curl -o ATIVaxyPanel.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/amdchanges/ATIVaxyPanel.cmd
-curl -o SetupBIN.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/amdchanges/SetupBIN.cmd
+curl -o ATIBINSetup.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/ATIBINSetup.cmd
+curl -o ATICMDPX.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/ATICMDPX.cmd
+curl -o ATICMDQC.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/ATICMDQC.cmd
+curl -o ATICMDRSB.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/ATICMDRSB.cmd
+curl -o ATICMDRSProf.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/ATICMDRSProf.cmd
+curl -o ATICMDULPS.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/ATICMDULPS.cmd
+curl -o ATIVaxyPanel.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/ATIVaxyPanel.cmd
+curl -o SetupBIN.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/SetupBIN.cmd
 cd ../..
 
 curl -o SteamSetup.exe https://cdn.fastly.steamstatic.com/client/installer/SteamSetup.exe
 
 
-cd "BayHub_SD_STOR_ installV3.4.01.89_W10W11_logoed_20220228"
+cd BayHub_SD_STOR_ installV3.4.01.89_W10W11_logoed_20220228
 setup.exe /S
 cd ..
 
@@ -53,7 +58,7 @@ cd cs35l41-V1.2.1.0
 pnputil -i -a cs35l41.inf
 cd ..
 
-cd "NAU88L21_x64_1.0.6.0_WHQL - DUA_BIQ_WHQL"
+cd NAU88L21_x64_1.0.6.0_WHQL - DUA_BIQ_WHQL
 pnputil -i -a NAU88L21.inf
 cd ..
 
@@ -62,7 +67,7 @@ SetupCLI.exe
 cd ..
 
 cd SteamDeck-Windows-WiFi-Fix-main
-Setup.bat
+start Setup.bat
 cd ..
 
 SteamSetup.exe /S
