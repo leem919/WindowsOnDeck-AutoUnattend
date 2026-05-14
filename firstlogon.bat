@@ -26,7 +26,7 @@ tar -xf wifi.zip
 del wifi.zip
 cd SteamDeck-Windows-WiFi-Fix-main
 del Setup.bat
-curl -L -o Setup.bat https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/Setup-wifi.bat
+curl -L -o Setup.bat https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/autoscripts/Setup-wifi.bat
 cd ..
 
 mkdir amd
@@ -34,18 +34,27 @@ cd amd
 curl -o 7zr.exe https://www.7-zip.org/a/7zr.exe
 curl -L -o amd.7z https://sourceforge.net/projects/radeon-id-distribution/files/Release%%20Polaris-Vega-Navi/Release%%20AMD%%20SoC/WHQL-AMD-Software-Hybrid-Edition-23.11.1-PVN-AMDSoC-Nebula-Native-DCH.7z/download
 7zr x amd.7z
-del amd.zip
+del amd.7z
 cd Bin64
 del ATIBINSetup.cmd ATICMDPX.cmd ATICMDQC.cmd ATICMDRSB.cmd ATICMDRSProf.cmd ATICMDULPS.cmd ATIVaxyPanel.cmd SetupBIN.cmd /q
-curl -o ATIBINSetup.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/ATIBINSetup.cmd
-curl -o ATICMDPX.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/ATICMDPX.cmd
-curl -o ATICMDQC.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/ATICMDQC.cmd
-curl -o ATICMDRSB.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/ATICMDRSB.cmd
-curl -o ATICMDRSProf.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/ATICMDRSProf.cmd
-curl -o ATICMDULPS.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/ATICMDULPS.cmd
-curl -o ATIVaxyPanel.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/ATIVaxyPanel.cmd
-curl -o SetupBIN.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/changedscripts/SetupBIN.cmd
+curl -o ATIBINSetup.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/autoscripts/ATIBINSetup.cmd
+curl -o ATICMDPX.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/autoscripts/ATICMDPX.cmd
+curl -o ATICMDQC.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/autoscripts/ATICMDQC.cmd
+curl -o ATICMDRSB.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/autoscripts/ATICMDRSB.cmd
+curl -o ATICMDRSProf.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/autoscripts/ATICMDRSProf.cmd
+curl -o ATICMDULPS.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/autoscripts/ATICMDULPS.cmd
+curl -o ATIVaxyPanel.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/autoscripts/ATIVaxyPanel.cmd
+curl -o SetupBIN.cmd https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/autoscripts/SetupBIN.cmd
 cd ../..
+
+mkdir display
+cd display
+curl -L -o display.zip http://noeld.com/dl.asp?filename=display.zip
+tar -xf display.zip
+del display.zip display32.exe readme.htm
+echo display64 /rotate:270 > 270.bat
+cd ..
+
 
 curl -o SteamSetup.exe https://cdn.fastly.steamstatic.com/client/installer/SteamSetup.exe
 
@@ -70,7 +79,13 @@ cd SteamDeck-Windows-WiFi-Fix-main
 start Setup.bat
 cd ..
 
+cd display
+270.bat
+cd ..
+
 SteamSetup.exe /S
+
+reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v "Steam" /t REG_SZ /d "\"C:\Program Files (x86)\Steam\steam.exe\" -steamdeck -bigpicture" /f
 
 cd RTBlueR_FilterDriver_1041.3005_1201.2021_new_L
 InstallDriver.cmd
