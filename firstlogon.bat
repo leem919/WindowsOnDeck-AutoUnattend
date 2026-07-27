@@ -21,14 +21,6 @@ curl -o sound2.zip https://steamdeck-packages.steamos.cloud/misc/windows/drivers
 tar -xf sound2.zip
 del sound2.zip
 
-curl -o wifi.zip https://codeload.github.com/ryanrudolfoba/SteamDeck-Windows-WiFi-Fix/zip/refs/heads/main
-tar -xf wifi.zip
-del wifi.zip
-cd SteamDeck-Windows-WiFi-Fix-main
-del Setup.bat
-curl -L -o Setup.bat https://raw.githubusercontent.com/leem919/WindowsOnDeck-AutoUnattend/refs/heads/main/autoscripts/Setup-wifi.bat
-cd ..
-
 mkdir amd
 cd amd
 curl -o 7zr.exe https://www.7-zip.org/a/7zr.exe
@@ -49,7 +41,7 @@ cd ../..
 
 mkdir display
 cd display
-curl -L -o display.zip http://noeld.com/dl.asp?filename=display.zip
+curl -L -o display.zip https://github.com/leem919/WindowsOnDeck-AutoUnattend/raw/refs/heads/main/display_majorgeeks.zip
 tar -xf display.zip
 del display.zip display32.exe readme.htm
 echo display64 /rotate:270 > 270.bat
@@ -73,10 +65,6 @@ cd ..
 
 cd amd
 SetupCLI.exe
-cd ..
-
-cd SteamDeck-Windows-WiFi-Fix-main
-start Setup.bat
 cd ..
 
 cd display
