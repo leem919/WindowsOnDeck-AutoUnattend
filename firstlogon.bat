@@ -64,7 +64,7 @@ SetupCLI.exe
 cd ..
 
 cd display
-270.bat
+call 270.bat
 cd ..
 
 SteamSetup.exe /S
