@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <unattend xmlns="urn:schemas-microsoft-com:unattend" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
-	<!--https://schneegans.de/windows/unattend-generator/?LanguageMode=Interactive&PEMode=Generated&Disable8Dot3Names=true&PauseBeforeFormatting=true&InstallFromMode=Interactive&PartitionMode=Unattended&TargetDisk=0&SystemSize=300&PartitionLayout=Automatic&RecoveryMode=Partition&RecoverySize=1000&DiskAssertionMode=Generated&AssertMinSize=62&AssertMaxSize=4000&AssertInterfaceType=true&WindowsEditionMode=Interactive&ProcessorArchitecture=amd64&BypassRequirementsCheck=true&ComputerNameMode=Random&TimeZoneMode=Implicit&UserAccountMode=Unattended&AccountName0=Admin&AccountDisplayName0=&AccountPassword0=&AccountGroup0=Administrators&AutoLogonMode=Own&PasswordExpirationMode=Unlimited&LockoutMode=Default&HideFiles=Hidden&TaskbarSearch=Icon&TaskbarIconsMode=Default&DisableWidgets=true&LeftTaskbar=true&DisableBingResults=true&StartTilesMode=Default&StartPinsMode=Empty&DisableEdgeStartupBoost=true&DeleteWindowsOld=true&EffectsMode=Custom&FontSmoothing=true&DesktopIconsMode=Default&StartFoldersMode=Default&CoreIsolationMode=Enabled&WifiMode=Interactive&ExpressSettings=DisableAll&LockKeysMode=Skip&StickyKeysMode=Default&ColorMode=Default&WallpaperMode=Default&LockScreenMode=Default&Remove3DViewer=true&RemoveBingSearch=true&RemoveCamera=true&RemoveClipchamp=true&RemoveCopilot=true&RemoveCortana=true&RemoveDevHome=true&RemoveFamily=true&RemoveGetHelp=true&RemoveInternetExplorer=true&RemoveMailCalendar=true&RemoveMaps=true&RemoveMathInputPanel=true&RemoveMixedReality=true&RemoveNews=true&RemoveOffice365=true&RemoveOneNote=true&RemoveOutlook=true&RemovePaint3D=true&RemovePeople=true&RemovePowerAutomate=true&RemoveRecall=true&RemoveSkype=true&RemoveStepsRecorder=true&RemoveStickyNotes=true&RemoveTeams=true&RemoveGetStarted=true&RemoveToDo=true&RemoveVoiceRecorder=true&RemoveWallet=true&RemoveWeather=true&SystemScript0=foreach%28+%24drive+in+%5BSystem.IO.DriveInfo%5D%3A%3AGetDrives%28%29+%29+%7B%0D%0A++++if%28+%24found+%3D+Join-Path+-Path+%24drive.RootDirectory+-ChildPath+%27deckwifi%5CSetup.bat%27+-Resolve+-ErrorAction+%27SilentlyContinue%27+%29+%7B%0D%0A++++++++Push-Location+-Path+%28Split-Path+-Path+%24found+-Parent%29%3B%0D%0A++++++++Start-Process+-FilePath+%24found+-Wait%3B%0D%0A++++++++Pop-Location%3B%0D%0A++++++++return%3B%0D%0A++++%7D%0D%0A%7D%0D%0A%27Cannot+find+any+files+that+match+pattern.%27+%7C+Write-Warning%3B&SystemScriptType0=Ps1&FirstLogonScript0=cd+..%2F..%0D%0Amkdir+leem919_WoD%0D%0Acd+leem919_WoD%0D%0Acurl+-o+firstlogon.bat+https%3A%2F%2Fraw.githubusercontent.com%2Fleem919%2FWindowsOnDeck-AutoUnattend%2Frefs%2Fheads%2Fmain%2Ffirstlogon.bat%0D%0Afirstlogon.bat&FirstLogonScriptType0=Cmd&AppLockerMode=Skip-->
+	<!--https://schneegans.de/windows/unattend-generator/?LanguageMode=Interactive&PEMode=Default&WindowsEditionMode=Interactive&ProcessorArchitecture=amd64&BypassRequirementsCheck=true&ComputerNameMode=Random&TimeZoneMode=Implicit&UserAccountMode=Unattended&AccountName0=Admin&AccountDisplayName0=&AccountPassword0=&AccountGroup0=Administrators&AutoLogonMode=Own&PasswordExpirationMode=Unlimited&LockoutMode=Default&HideFiles=Hidden&TaskbarSearch=Icon&TaskbarIconsMode=Default&DisableWidgets=true&LeftTaskbar=true&DisableBingResults=true&StartTilesMode=Default&StartPinsMode=Empty&DisableEdgeStartupBoost=true&DeleteWindowsOld=true&EffectsMode=Custom&FontSmoothing=true&DesktopIconsMode=Default&StartFoldersMode=Default&CoreIsolationMode=Enabled&WifiMode=Interactive&ExpressSettings=DisableAll&LockKeysMode=Skip&StickyKeysMode=Default&ColorMode=Default&WallpaperMode=Default&LockScreenMode=Default&Remove3DViewer=true&RemoveBingSearch=true&RemoveCamera=true&RemoveClipchamp=true&RemoveCopilot=true&RemoveCortana=true&RemoveDevHome=true&RemoveFamily=true&RemoveGetHelp=true&RemoveInternetExplorer=true&RemoveMailCalendar=true&RemoveMaps=true&RemoveMathInputPanel=true&RemoveMixedReality=true&RemoveNews=true&RemoveOffice365=true&RemoveOneNote=true&RemoveOutlook=true&RemovePaint3D=true&RemovePeople=true&RemovePowerAutomate=true&RemoveRecall=true&RemoveSkype=true&RemoveStepsRecorder=true&RemoveStickyNotes=true&RemoveTeams=true&RemoveGetStarted=true&RemoveToDo=true&RemoveVoiceRecorder=true&RemoveWallet=true&RemoveWeather=true&SystemScript0=foreach%28+%24drive+in+%5BSystem.IO.DriveInfo%5D%3A%3AGetDrives%28%29+%29+%7B%0D%0A++++if%28+%24found+%3D+Join-Path+-Path+%24drive.RootDirectory+-ChildPath+%27deckwifi%5CSetup.bat%27+-Resolve+-ErrorAction+%27SilentlyContinue%27+%29+%7B%0D%0A++++++++Push-Location+-Path+%28Split-Path+-Path+%24found+-Parent%29%3B%0D%0A++++++++Start-Process+-FilePath+%24found+-Wait%3B%0D%0A++++++++Pop-Location%3B%0D%0A++++++++return%3B%0D%0A++++%7D%0D%0A%7D%0D%0A%27Cannot+find+any+files+that+match+pattern.%27+%7C+Write-Warning%3B&SystemScriptType0=Ps1&FirstLogonScript0=cd+..%2F..%0D%0Amkdir+leem919_WoD%0D%0Acd+leem919_WoD%0D%0Acurl+-o+firstlogon.bat+https%3A%2F%2Fraw.githubusercontent.com%2Fleem919%2FWindowsOnDeck-AutoUnattend%2Frefs%2Fheads%2Fmain%2Ffirstlogon.bat%0D%0Afirstlogon.bat&FirstLogonScriptType0=Cmd&AppLockerMode=Skip-->
 	<settings pass="offlineServicing"></settings>
 	<settings pass="windowsPE">
 		<component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<UserData>
+				<ProductKey>
+					<Key>00000-00000-00000-00000-00000</Key>
+					<WillShowUI>Always</WillShowUI>
+				</ProductKey>
+				<AcceptEula>true</AcceptEula>
+			</UserData>
+			<UseConfigurationSet>false</UseConfigurationSet>
 			<DiskConfiguration>
 				<Disk wcm:action="add">
 					<DiskID>0</DiskID>
@@ -12,7 +20,7 @@
 						<CreatePartition wcm:action="add">
 							<Order>1</Order>
 							<Type>EFI</Type>
-							<Size>300</Size>
+							<Size>260</Size>
 						</CreatePartition>
 						<CreatePartition wcm:action="add">
 							<Order>2</Order>
@@ -29,19 +37,15 @@
 						<ModifyPartition wcm:action="add">
 							<Order>1</Order>
 							<PartitionID>1</PartitionID>
-							<Format>FAT32</Format>
 							<Label>System</Label>
+							<Format>FAT32</Format>
 						</ModifyPartition>
 						<ModifyPartition wcm:action="add">
 							<Order>2</Order>
-							<PartitionID>2</PartitionID>
-						</ModifyPartition>
-						<ModifyPartition wcm:action="add">
-							<Order>3</Order>
 							<PartitionID>3</PartitionID>
-							<Format>NTFS</Format>
 							<Label>Windows</Label>
-							<Letter>W</Letter>
+							<Format>NTFS</Format>
+							<Letter>C</Letter>
 						</ModifyPartition>
 					</ModifyPartitions>
 				</Disk>
@@ -56,12 +60,20 @@
 					<WillShowUI>OnError</WillShowUI>
 				</OSImage>
 			</ImageInstall>
-			<UserData>
-				<ProductKey>
-					<Key></Key>
-				</ProductKey>
-				<AcceptEula>true</AcceptEula>
-			</UserData>
+			<RunSynchronous>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassTPMCheck /t REG_DWORD /d 1 /f</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>2</Order>
+					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassSecureBootCheck /t REG_DWORD /d 1 /f</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>3</Order>
+					<Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassRAMCheck /t REG_DWORD /d 1 /f</Path>
+				</RunSynchronousCommand>
+			</RunSynchronous>
 		</component>
 	</settings>
 	<settings pass="generalize"></settings>
