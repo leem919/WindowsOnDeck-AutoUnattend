@@ -345,6 +345,7 @@ Set-ItemProperty -LiteralPath $key -Name 'ConfigureStartPins' -Value $json -Type
 		</File>
 		<File path="C:\Windows\Setup\Scripts\unattend-01.ps1">
 foreach( $drive in [System.IO.DriveInfo]::GetDrives() ) {
+    if( $bat = Join-Path -Path $drive.RootDirectory -ChildPath 'deckwifi\Setup.bat' -Resolve -ErrorAction 'SilentlyContinue' ) { $lines = [System.Collections.Generic.List[string]]@(Get-Content -LiteralPath $bat); $i = $lines.Count - 2; if( $i -ge 0 -and $lines[$i].Trim() -ieq 'pause' ) { $lines.RemoveAt($i); Set-Content -LiteralPath $bat -Value $lines -ErrorAction 'SilentlyContinue'; } }
     if( $found = Join-Path -Path $drive.RootDirectory -ChildPath 'deckwifi\Setup.bat' -Resolve -ErrorAction 'SilentlyContinue' ) {
         Push-Location -Path (Split-Path -Path $found -Parent);
         Start-Process -FilePath $found -Wait;

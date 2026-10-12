@@ -71,6 +71,8 @@ SteamSetup.exe /S
 
 reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v "Steam" /t REG_SZ /d "\"C:\Program Files (x86)\Steam\steam.exe\" -steamdeck -bigpicture" /f
 
+shutdown /r /t 45
+
 cd RTBlueR_FilterDriver_1041.3005_1201.2021_new_L
 InstallDriver.cmd
 cd ..
