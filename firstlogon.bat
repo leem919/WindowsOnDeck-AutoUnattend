@@ -69,7 +69,7 @@ cd ..
 
 SteamSetup.exe /S
 
-reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v "Steam" /t REG_SZ /d "\"C:\Program Files (x86)\Steam\steam.exe\" -steamdeck -bigpicture" /f
+reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v "Steam" /t REG_SZ /d "\"C:\Program Files (x86)\Steam\steam.exe\" -steamdeck -bigpicture -steamos3" /f
 
 shutdown /r /t 45
 
